@@ -50,10 +50,10 @@ jobs:
       - name: Log in to DockerHub
         uses: docker/login-action@v2
         with:
-          password: ${{ %XQ5q$9T48cqd&f }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
 
       # Build and push Docker image
       - name: Build and push Docker image
         run: |
-          docker build -t ${{ sandro241 }}/app-refcard-01:latest .
-          docker push ${{ sandro241 }}/app-refcard-01:latest
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/app-refcard-01:latest .
+          docker push ${{ secrets.DOCKER_USERNAME }}/app-refcard-01:latest
